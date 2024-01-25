@@ -27,7 +27,8 @@ This task was a good demonstration of knowledge of SQL, Utilizing a well-known R
 The task involves developing a Python script to scrape book information from a website, process the data, and save it in a structured format (CSV file). The script specifically targets the retrieval of book names, prices, availability status, and individual links. Additionally, it performs data transformation and encoding before saving the data.
 
 <h3>Libraries Used:</h3>
-Requests: This library is used for making HTTP requests to the website. It fetches the HTML content of the web pages for further processing.
+
+Requests: This library is used for making HTTP requests to the website. It fetches the HTML content of the web pages for further processing.<br>
 
 BeautifulSoup (from bs4): BeautifulSoup is utilized for parsing HTML and navigating through the HTML tags. It is essential for extracting specific data like book names, prices, and availability from the HTML content.
 
