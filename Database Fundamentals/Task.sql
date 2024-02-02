@@ -69,7 +69,7 @@ CREATE TABLE Shippers
 (
     ShipperID	INT PRIMARY KEY,
     ShipperName	VARCHAR(512),
-    Phone	FLOAT
+    Phone	VARCHAR(512)
 );
 
 
