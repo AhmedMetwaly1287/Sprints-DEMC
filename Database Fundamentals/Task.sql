@@ -92,7 +92,7 @@ CREATE TABLE Suppliers
 
 
 
-Select Employees.EmployeeID,Employees.FirstName,Employees.LastName,count(Orders.EmployeeID) as NoOfOrders from Employees
+Select TOP 10 Employees.EmployeeID,Employees.FirstName,Employees.LastName,count(Orders.EmployeeID) as NoOfOrders from Employees
 INNER JOIN Orders on Employees.EmployeeID = Orders.EmployeeID
 GROUP BY Employees.EmployeeID,Employees.FirstName,Employees.LastName
 ORDER BY NoOfOrders DESC;
