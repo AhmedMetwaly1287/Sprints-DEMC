@@ -92,20 +92,20 @@ CREATE TABLE Suppliers
 
 --TASK 1--
 
-Select TOP 10 Employees.EmployeeID,Employees.FirstName,Employees.LastName,count(Orders.EmployeeID) as NoOfOrders from Employees
+Select TOP 10 Employees.EmployeeID,Employees.FirstName,Employees.LastName,count(Orders.EmployeeID) as Number_Of_Orders from Employees
 INNER JOIN Orders on Employees.EmployeeID = Orders.EmployeeID
 GROUP BY Employees.EmployeeID,Employees.FirstName,Employees.LastName
-ORDER BY NoOfOrders DESC;
+ORDER BY Number_Of_Orders DESC;
 
 
 --TASK 2--
 
-Select TOP 10 Employees.EmployeeID,Employees.FirstName,Employees.LastName, SUM(OrderDetails.Quantity)as SoldMostBeverages from Employees
+Select TOP 10 Employees.EmployeeID,Employees.FirstName,Employees.LastName, SUM(OrderDetails.Quantity)as Sold_Most_Beverages from Employees
 INNER JOIN Orders on  Employees.EmployeeID = Orders.EmployeeID
 INNER JOIN OrderDetails on Orders.OrderID = OrderDetails.OrderID
 INNER JOIN Products on OrderDetails.ProductID = Products.ProductID
 WHERE Products.CategoryID = 1
 GROUP BY Employees.EmployeeID,Employees.FirstName,Employees.LastName
-ORDER BY SoldMostBeverages DESC;
+ORDER BY Sold_Most_Beverages DESC;
 
 
