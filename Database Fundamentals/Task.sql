@@ -1,4 +1,3 @@
-Create database drawio
 CREATE TABLE Customers 
 (
     CustomerID	INT PRIMARY KEY,
