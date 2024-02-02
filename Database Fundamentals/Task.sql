@@ -1,4 +1,3 @@
-Create database drawio
 CREATE TABLE Customers 
 (
     CustomerID	INT PRIMARY KEY,
@@ -70,7 +69,7 @@ CREATE TABLE Shippers
 (
     ShipperID	INT PRIMARY KEY,
     ShipperName	VARCHAR(512),
-    Phone	FLOAT
+    Phone	VARCHAR(512)
 );
 
 
@@ -91,29 +90,22 @@ CREATE TABLE Suppliers
 
 
 
+--TASK 1--
 
-
-Select Employees.EmployeeID,Employees.FirstName,Employees.LastName,count(Orders.EmployeeID) as NoOfOrders from Employees
+Select TOP 10 Employees.EmployeeID,Employees.FirstName,Employees.LastName,count(Orders.EmployeeID) as Number_Of_Orders from Employees
 INNER JOIN Orders on Employees.EmployeeID = Orders.EmployeeID
 GROUP BY Employees.EmployeeID,Employees.FirstName,Employees.LastName
-ORDER BY NoOfOrders DESC;
+ORDER BY Number_Of_Orders DESC;
 
 
-select * from Categories;
+--TASK 2--
 
---Beverages is CategoryID 1--
-
-select * from OrderDetails
-
-select * from products
-
-Select TOP 10 Employees.EmployeeID,Employees.FirstName,Employees.LastName, SUM(OrderDetails.Quantity)as SoldMostBeverages from Employees
+Select TOP 10 Employees.EmployeeID,Employees.FirstName,Employees.LastName, SUM(OrderDetails.Quantity)as Sold_Most_Beverages from Employees
 INNER JOIN Orders on  Employees.EmployeeID = Orders.EmployeeID
 INNER JOIN OrderDetails on Orders.OrderID = OrderDetails.OrderID
 INNER JOIN Products on OrderDetails.ProductID = Products.ProductID
 WHERE Products.CategoryID = 1
 GROUP BY Employees.EmployeeID,Employees.FirstName,Employees.LastName
-ORDER BY SoldMostBeverages DESC;
+ORDER BY Sold_Most_Beverages DESC;
 
 
-SELECT 'sqlserver' dbms,t.TABLE_CATALOG,t.TABLE_SCHEMA,t.TABLE_NAME,c.COLUMN_NAME,c.ORDINAL_POSITION,c.DATA_TYPE,c.CHARACTER_MAXIMUM_LENGTH,n.CONSTRAINT_TYPE,k2.TABLE_SCHEMA,k2.TABLE_NAME,k2.COLUMN_NAME FROM INFORMATION_SCHEMA.TABLES t LEFT JOIN INFORMATION_SCHEMA.COLUMNS c ON t.TABLE_CATALOG=c.TABLE_CATALOG AND t.TABLE_SCHEMA=c.TABLE_SCHEMA AND t.TABLE_NAME=c.TABLE_NAME LEFT JOIN(INFORMATION_SCHEMA.KEY_COLUMN_USAGE k JOIN INFORMATION_SCHEMA.TABLE_CONSTRAINTS n ON k.CONSTRAINT_CATALOG=n.CONSTRAINT_CATALOG AND k.CONSTRAINT_SCHEMA=n.CONSTRAINT_SCHEMA AND k.CONSTRAINT_NAME=n.CONSTRAINT_NAME LEFT JOIN INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS r ON k.CONSTRAINT_CATALOG=r.CONSTRAINT_CATALOG AND k.CONSTRAINT_SCHEMA=r.CONSTRAINT_SCHEMA AND k.CONSTRAINT_NAME=r.CONSTRAINT_NAME)ON c.TABLE_CATALOG=k.TABLE_CATALOG AND c.TABLE_SCHEMA=k.TABLE_SCHEMA AND c.TABLE_NAME=k.TABLE_NAME AND c.COLUMN_NAME=k.COLUMN_NAME LEFT JOIN INFORMATION_SCHEMA.KEY_COLUMN_USAGE k2 ON k.ORDINAL_POSITION=k2.ORDINAL_POSITION AND r.UNIQUE_CONSTRAINT_CATALOG=k2.CONSTRAINT_CATALOG AND r.UNIQUE_CONSTRAINT_SCHEMA=k2.CONSTRAINT_SCHEMA AND r.UNIQUE_CONSTRAINT_NAME=k2.CONSTRAINT_NAME WHERE t.TABLE_TYPE='BASE TABLE';
