@@ -81,7 +81,7 @@ Task.ipynb: This is the file containing Data Ingestion, Data Transformation and 
 Dataset.csv: The dataset utilized to be Ingested, Transformed and Operated on.
 
 
-<h2>Coursera Courses Data Wrangling with PySpark</h2>
+<h2>4. Coursera Courses Data Wrangling with PySpark</h2>
 This repository contains the code and documentation for a data wrangling task focused on Coursera Courses data using PySpark. The project involves ingesting course data from a CSV file, performing aggregation functions, handling null values, creating new features for future analysis, and utilizing Spark SQL for querying and analysis.
 
 <h3>Project Description & Steps</h3>
