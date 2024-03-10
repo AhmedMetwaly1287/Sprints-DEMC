@@ -71,8 +71,11 @@ This repository showcases a data wrangling task focused on Loan Applications Cla
 <h3>Project Description & Steps</h3>
 
 Data Ingestion: Utilized Pandas to ingest raw data in various formats and structures.
+
 Data Transformation: Handled null values, casted columns into appropriate data types, and transformed the format of columns for analysis.
+
 Data Visualization: Employed Matplotlib and Seaborn to create various graphs for visualization, including Box plots, Count plots, and Heatmaps.
+
 Classification Model: Utilized Scikit-Learn to create a simple classification model achieving an accuracy of 0.79.
 
 <h3>Project Structure</h3>
@@ -88,11 +91,17 @@ This repository contains the code and documentation for a data wrangling task fo
 <h3>Project Description & Steps</h3>
 
 Data Ingestion: Utilized PySpark to ingest course data from a CSV file.
+
 Aggregation Functions: Carried out a set of aggregation functions on the dataset to derive meaningful insights.
+
 Null Values Handling: Implemented strategies to handle null values in the dataset.
+
 Column Type Casting: Casted columns into appropriate data types for analysis.
+
 Feature Engineering: Created new features/columns to facilitate future analysis.
+
 Data Storage: Stored the transformed dataset into a file named "TransCSV".
+
 Spark SQL: Created a temporary view of the PySpark DataFrame and wrote queries to demonstrate knowledge in Spark SQL.
 
 <h3>Project Structure</h3>
