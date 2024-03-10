@@ -69,6 +69,7 @@ This task combines web scraping, data extraction, and data transformation techni
 This repository showcases a data wrangling task focused on Loan Applications Classification using Python. The primary goal of this project is to ingest data, perform data wrangling tasks, visualize the data, and create a simple classification model using Scikit-Learn.
 
 <h3>Project Description & Steps</h3>
+
 Data Ingestion: Utilized Pandas to ingest raw data in various formats and structures.
 Data Transformation: Handled null values, casted columns into appropriate data types, and transformed the format of columns for analysis.
 Data Visualization: Employed Matplotlib and Seaborn to create various graphs for visualization, including Box plots, Count plots, and Heatmaps.
@@ -85,6 +86,7 @@ Dataset.csv: The dataset utilized to be Ingested, Transformed and Operated on.
 This repository contains the code and documentation for a data wrangling task focused on Coursera Courses data using PySpark. The project involves ingesting course data from a CSV file, performing aggregation functions, handling null values, creating new features for future analysis, and utilizing Spark SQL for querying and analysis.
 
 <h3>Project Description & Steps</h3>
+
 Data Ingestion: Utilized PySpark to ingest course data from a CSV file.
 Aggregation Functions: Carried out a set of aggregation functions on the dataset to derive meaningful insights.
 Null Values Handling: Implemented strategies to handle null values in the dataset.
