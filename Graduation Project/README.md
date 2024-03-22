@@ -340,7 +340,11 @@ nameNode=hdfs://quickstart.cloudera:8020
 
 ![Screenshot 2024-03-21 173503](https://github.com/AhmedMetwaly1287/Sprints-DEMC/assets/139663311/8813e2bd-c725-4cbd-a3ae-8f12e2ed0df9)
 
+(Due to Machine Resource Limitations, The number of records inserted inside the partitioned table is limited to 3 records)
+
 ![Screenshot 2024-03-21 173524](https://github.com/AhmedMetwaly1287/Sprints-DEMC/assets/139663311/10a2f2fa-de0f-4440-b148-1ba03b7a0240)
+
+(Due to Prior Machine Resource Limitations, The number of records inserted inside the partitioned table is limited to 2 records)
 
 <h4>HDFS</h4>
 
@@ -354,11 +358,11 @@ nameNode=hdfs://quickstart.cloudera:8020
 
 ![Screenshot 2024-03-21 173917](https://github.com/AhmedMetwaly1287/Sprints-DEMC/assets/139663311/31ac9702-3ca1-4bdf-8564-7046bac99163)
 
-(Due to Machine Resource Limitations, The number of records inserted inside the partitioned table is limited to 3 records)
+
 
 ![Screenshot 2024-03-21 173941](https://github.com/AhmedMetwaly1287/Sprints-DEMC/assets/139663311/1180400d-35c3-4867-b482-eb5a4d1e645a)
 
-(Due to Prior Machine Resource Limitations, The number of records inserted inside the partitioned table is limited to 2 records)
+
 
 <h3>6. Data Visualization</h3>
 
