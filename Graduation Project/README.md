@@ -21,6 +21,12 @@
      <li>
         <strong>Apache Hive</strong>
     </li>
+
+  <li>
+    <strong>Cloudera Manager</strong>
+
+<ul>To Monitor the health of the Cluster and the servies running on it, monitor the resource usage of the cluster and adjust the configuration of services as needed</ul>
+</li>
   <li>
         <strong>Microsoft PowerBI</strong>
     </li>
