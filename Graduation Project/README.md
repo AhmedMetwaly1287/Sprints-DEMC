@@ -1,4 +1,4 @@
-<head>COVID-19 Automated Workflow using Oozie</head>
+<h1>COVID-19 Automated Workflow using Oozie</h1>
 
 
 
