@@ -1,6 +1,6 @@
-<h1>Sprints.ai - Data Engineering Masterclass</h1>
+<h1>COVID-19 Automated Workflow using Oozie</h1>
 
-<p><strong>This repository includes the Graduation Project Provided by Sprints.ai</strong></p>
+
 
 <h2>Project Description</h2>
 
