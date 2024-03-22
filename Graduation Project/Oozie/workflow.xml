@@ -1,0 +1,95 @@
+<workflow-app name="SprintsWorkflow" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name></name>
+                    <value></value>
+                </property>
+            </configuration>
+  </global>
+    <start to="shell-4f63"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="hive2-4fea" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://quickstart.cloudera:10000/default</jdbc-url>
+            <script>/user/cloudera/covid_project/HQL/CreateDB.hql</script>
+        </hive2>
+        <ok to="hive2-12cd"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-12cd" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://quickstart.cloudera:10000/default</jdbc-url>
+            <script>/user/cloudera/covid_project/HQL/CreateStagingTable.hql</script>
+        </hive2>
+        <ok to="hive2-9b1a"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-9b1a" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://quickstart.cloudera:10000/default</jdbc-url>
+            <script>/user/cloudera/covid_project/HQL/LoadIntoStagingTable.hql</script>
+        </hive2>
+        <ok to="hive2-4be9"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-4be9" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://quickstart.cloudera:10000/default</jdbc-url>
+            <script>/user/cloudera/covid_project/HQL/CreatePartitionedTable.hql</script>
+        </hive2>
+        <ok to="hive2-84ff"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-84ff" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://quickstart.cloudera:10000/default</jdbc-url>
+            <script>/user/cloudera/covid_project/HQL/InsertIntoPartitionedTable.hql</script>
+        </hive2>
+        <ok to="hive2-7d36"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-7d36" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://quickstart.cloudera:10000/default</jdbc-url>
+            <script>/user/cloudera/covid_project/HQL/CreateFinalOutput.hql</script>
+        </hive2>
+        <ok to="hive2-e0c3"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-e0c3" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://quickstart.cloudera:10000/default</jdbc-url>
+            <script>/user/cloudera/covid_project/HQL/InsertIntoFinal.hql</script>
+        </hive2>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-4f63">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>/user/cloudera/covid_project/script/Script.sh</exec>
+              <capture-output/>
+        </shell>
+        <ok to="hive2-4fea"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>
