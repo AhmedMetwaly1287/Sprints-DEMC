@@ -45,6 +45,16 @@
 <p><strong>COVID-19 Dataset was used in this project, initially the project has had an issue with inconsistent whitespace between each column, 
 resulting in errors when trying to ingest the data into the Staging Table using Hive so a simple Python Script was leveraged to replace the inconsistent whitespaces with a comma to faciliate the Data Ingestion Stage (Refer to Dataset/transformDS.py)</strong></p>
 
+```python
+INPUT = fr"covid-19.csv"
+OUTPUT = "final.csv"
+
+with open(INPUT, 'r'), open(OUTPUT, 'w', newline=''):
+    for line in INPUT:
+        fields = line.strip().split('\t')
+        OUTPUT.write(','.join(fields) + '\n')
+```
+
 <h3>2. File Preperation</h3>
 
 <p><strong>A simple Shell Script was used to create the directory that will contain all the necessary files for our Apache Oozie workflow, this file was transported to the VM using WinSCP and then executed via Terminal</strong></p>
