@@ -112,6 +112,16 @@ Dataset.csv: Data in it's raw format
 
 TransCSV file: Contains the transformed dataset.
 
+<h2>5. Graduation Project (COVID Automated Workflow)</h2>
+This repository contains the code and documentation for a data wrangling task focused on Coursera Courses data using PySpark. The project involves ingesting course data from a CSV file, performing aggregation functions, handling null values, creating new features for future analysis, and utilizing Spark SQL for querying and analysis.
+
+<h3>Project Description</h3>
+
+This project integrates multiple technologies to create an automated workflow within a Cloudera CDH environment. Leveraging Apache Oozie, workflows are automated, ensuring efficient execution of tasks. Apache Hive is utilized for querying datasets, while the Apache HUE UI provides a user-friendly interface for interacting with Hive, Oozie using Drag and Drop. Python and Shell scripting enhance functionality and customization, while HDFS CLI facilitates interaction with the distributed file system. Through Cloudera Manager, cluster resources are efficiently managed, ensuring optimal performance and scalability of the entire worfklow and PowerBI for interactive and detailed representation of the data
+
+<h3>Project Structure</h3>
+
+Refer to the graduation project file for more.
 
 
 
