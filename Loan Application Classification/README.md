@@ -1,4 +1,4 @@
-<h2>3. Loan Applications Classification</h2>
+<h2>Loan Applications Classification</h2>
 This repository showcases a data wrangling task focused on Loan Applications Classification using Python. The primary goal of this project is to ingest data, perform data wrangling tasks, visualize the data, and create a simple classification model using Scikit-Learn.
 
 <h3>Project Description & Steps</h3>
